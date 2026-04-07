@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="utez.edu.mx.libreria.controller.DetalleController"
+      spacing="18" styleClass="detail-pane">
+
+    <padding><Insets top="28" right="36" bottom="28" left="36"/></padding>
+
+    <Label text="📖 Detalle del Libro" styleClass="form-title"/>
+    <Separator/>
+
+    <GridPane hgap="16" vgap="14">
+        <columnConstraints>
+            <ColumnConstraints minWidth="100" prefWidth="120"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="ISBN / ID:" GridPane.rowIndex="0"
+               GridPane.columnIndex="0" styleClass="detail-key"/>
+        <Label fx:id="lblIsbn" GridPane.rowIndex="0"
+               GridPane.columnIndex="1" styleClass="detail-value"/>
+
+        <Label text="Título:" GridPane.rowIndex="1"
+               GridPane.columnIndex="0" styleClass="detail-key"/>
+        <Label fx:id="lblTitulo" GridPane.rowIndex="1"
+               GridPane.columnIndex="1" styleClass="detail-value"
+               wrapText="true"/>
+
+        <Label text="Autor:" GridPane.rowIndex="2"
+               GridPane.columnIndex="0" styleClass="detail-key"/>
+        <Label fx:id="lblAutor" GridPane.rowIndex="2"
+               GridPane.columnIndex="1" styleClass="detail-value"/>
+
+        <Label text="Año:" GridPane.rowIndex="3"
+               GridPane.columnIndex="0" styleClass="detail-key"/>
+        <Label fx:id="lblAnio" GridPane.rowIndex="3"
+               GridPane.columnIndex="1" styleClass="detail-value"/>
+
+        <Label text="Género:" GridPane.rowIndex="4"
+               GridPane.columnIndex="0" styleClass="detail-key"/>
+        <Label fx:id="lblGenero" GridPane.rowIndex="4"
+               GridPane.columnIndex="1" styleClass="detail-value"/>
+
+        <Label text="Estado:" GridPane.rowIndex="5"
+               GridPane.columnIndex="0" styleClass="detail-key"/>
+        <Label fx:id="lblDisponible" GridPane.rowIndex="5"
+               GridPane.columnIndex="1" styleClass="detail-value"/>
+    </GridPane>
+
+    <Separator/>
+
+    <HBox alignment="CENTER_RIGHT">
+        <Button text="← Regresar" onAction="#onRegresar"
+                styleClass="btn-secondary"/>
+    </HBox>
+</VBox>

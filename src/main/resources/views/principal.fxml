@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="utez.edu.mx.libreria.controller.FormularioController"
+      spacing="16" styleClass="form-pane">
+
+    <padding><Insets top="24" right="32" bottom="24" left="32"/></padding>
+
+    <Label fx:id="lblTituloPantalla" text="Registrar nuevo libro"
+           styleClass="form-title"/>
+
+    <Label fx:id="lblError" styleClass="error-label"
+           wrapText="true" maxWidth="440" visible="false"/>
+
+    <GridPane hgap="12" vgap="14">
+        <columnConstraints>
+            <ColumnConstraints minWidth="90" prefWidth="110"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="ISBN / ID:" GridPane.rowIndex="0"
+               GridPane.columnIndex="0" styleClass="form-label"/>
+        <TextField fx:id="txtIsbn" promptText="Ej. 978-0-06-112008-4"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Título:" GridPane.rowIndex="1"
+               GridPane.columnIndex="0" styleClass="form-label"/>
+        <TextField fx:id="txtTitulo" promptText="Mínimo 3 caracteres"
+                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Autor:" GridPane.rowIndex="2"
+               GridPane.columnIndex="0" styleClass="form-label"/>
+        <TextField fx:id="txtAutor" promptText="Mínimo 3 caracteres"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Año:" GridPane.rowIndex="3"
+               GridPane.columnIndex="0" styleClass="form-label"/>
+        <TextField fx:id="txtAnio" promptText="Ej. 1985"
+                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Género:" GridPane.rowIndex="4"
+               GridPane.columnIndex="0" styleClass="form-label"/>
+        <ComboBox fx:id="cboGenero" maxWidth="Infinity"
+                  GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Estado:" GridPane.rowIndex="5"
+               GridPane.columnIndex="0" styleClass="form-label"/>
+        <CheckBox fx:id="chkDisponible" text="Disponible para préstamo"
+                  GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Separator/>
+
+    <HBox spacing="12" alignment="CENTER_RIGHT">
+        <Button fx:id="btnGuardar" text="💾 Guardar"
+                onAction="#onGuardar"
+                styleClass="btn-primary" defaultButton="true"/>
+        <Button text="✖ Cancelar" onAction="#onCancelar"
+                styleClass="btn-secondary" cancelButton="true"/>
+    </HBox>
+</VBox>
